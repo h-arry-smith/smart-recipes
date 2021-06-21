@@ -1,8 +1,10 @@
 import React from 'react'
+import { Link, useParams } from 'react-router-dom'
 
 import CheckboxList from './CheckboxList.jsx'
 
 const RecipeIntro = ({recipe}) => {
+  let { slug } = useParams()
   return (
     <div>
       <div className="mt-20 mx-auto text-center">
@@ -42,7 +44,14 @@ const RecipeIntro = ({recipe}) => {
             </div>
           </div>
         </div>
+      </div>
 
+      <div className="my-6">
+        <Link to={`${slug}/1`}>
+          <div className="py-4 px-8 rounded-lg bg-green-400 text-white text-2xl font-semibold w-max mx-auto">
+            Let's Begin!
+          </div>
+        </Link>
       </div>
     </div>
   );
