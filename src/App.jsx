@@ -3,10 +3,10 @@ import {
   BrowserRouter as Router,
   Switch,
   Route,
-  useParams
 } from 'react-router-dom'
 
 import Home from './Home.jsx'
+import Recipe from './Recipe.jsx'
 
 function App() {
   return (
@@ -20,13 +20,6 @@ function App() {
         </Route>
       </Switch>
     </Router>
-  )
-}
-
-function Recipe() {
-  let { slug } = useParams();
-  return (
-    <div> { slug } </div>
   )
 }
 
