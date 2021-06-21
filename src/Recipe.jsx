@@ -1,8 +1,9 @@
 import React, { useEffect, useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { Switch, Route, useParams, useRouteMatch } from 'react-router-dom'
 
 const Recipe = () => {
   const [recipe, setRecipe] = useState(null);
+  let { path, url } = useRouteMatch();
   let { slug } = useParams();
   
   useEffect(() => {
@@ -16,10 +17,14 @@ const Recipe = () => {
   
   if (recipe !== null) {
     return (
-      <div>
-        { recipe.metadata.title }
-        { recipe.metadata.author }
-      </div>
+      <Switch>
+        <Route exact path={path}>
+          {recipe.metadata.title}
+        </Route>
+        <Route path={`${path}/:step`}>
+          Step
+        </Route>
+      </Switch>
     )
   } else {
     return (
