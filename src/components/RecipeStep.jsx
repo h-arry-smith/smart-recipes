@@ -1,16 +1,26 @@
 import React from 'react'
 import { Link, useParams, useRouteMatch } from 'react-router-dom'
+import { ToWords } from 'to-words'
 
 const RecipeStep = ({recipe}) => {
   let { slug, step } = useParams()
+  const toWords = new ToWords()
+
   return (
     <div className="flex flex-col min-h-screen">
       <div className="flex-none">
         <RecipeHeader recipe={recipe} />
       </div>
       
-      <div className="flex-grow h-full">
-        {recipe.method[step - 1]}
+      <div className="flex-grow flex justify-center mt-24">
+        <div class="w-2/3">
+          <p className="pl-1 pr-4 uppercase text-gray-500 text-4xl w-max font-light">
+            Step <span className="font-semibold text-gray-600">{ toWords.convert(step) }</span>
+          </p>
+          <p className="text-gray-800 text-5xl font-light mt-4">
+            {recipe.method[step - 1]}
+          </p>
+        </div>
       </div>
 
       <div className="flex-none">
@@ -34,7 +44,7 @@ const RecipeFooter = ({step, path}) => {
     if (step === 0) {
       return <Link to={`/recipe/${path}`}>Back</Link>
     } else {
-      return <Link to={`${parseInt(step) - 1}`}>Previous Step</Link>
+      return <Link to={`${step}`}>Previous Step</Link>
     }
   }
 
