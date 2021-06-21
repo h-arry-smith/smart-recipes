@@ -2,7 +2,7 @@
   "metadata": {
     "author": "Harry Smith",
     "title": "Chicken & Rice Soup",
-    "tags": [],
+    "tags": ["quick", "cheap"],
     "timings": {"prep": 15, "cook": 30},
     "base-portion": 2
   },
