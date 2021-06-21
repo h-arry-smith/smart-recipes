@@ -1,0 +1,21 @@
+{
+  "metadata": {
+    "author": "Harry Smith",
+    "title": "Chicken & Rice Soup",
+    "tags": [],
+    "timings": {"prep": 15, "cook": 30},
+    "base-portion": 2
+  },
+  "ingredients": [
+    [3, "", "Boneless Chicken Thighs"],
+    [2, "inches", "Ginger"],
+    [4, "cloves", "Garlic"],
+    [2, "", "Red Chilli"],
+    [180, "g", "Jasmine Rice"],
+    [1, "", "Large Sweet Potato"],
+    [2, "", "Lemons"]
+  ],
+  "pantry": ["Salt", "Pepper", "Light Soy Sauce"],
+  "equipment": ["Chef's Knife", "Chopping Board", "Saucepan"],
+  "method": []
+}
