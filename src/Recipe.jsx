@@ -1,6 +1,8 @@
 import React, { useEffect, useState } from 'react'
 import { Switch, Route, useParams, useRouteMatch } from 'react-router-dom'
 
+import RecipeIntro from './components/RecipeIntro.jsx'
+
 const Recipe = () => {
   const [recipe, setRecipe] = useState(null);
   let { path, url } = useRouteMatch();
@@ -19,7 +21,7 @@ const Recipe = () => {
     return (
       <Switch>
         <Route exact path={path}>
-          {recipe.metadata.title}
+          <RecipeIntro recipe={recipe} />
         </Route>
         <Route path={`${path}/:step`}>
           Step

@@ -4,7 +4,7 @@
     "title": "Chicken & Rice Soup",
     "tags": ["quick", "cheap"],
     "timings": {"prep": 15, "cook": 30},
-    "base-portion": 2
+    "basePortion": 2
   },
   "ingredients": [
     [3, "", "Boneless Chicken Thighs"],
