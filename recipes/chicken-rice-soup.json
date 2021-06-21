@@ -16,6 +16,27 @@
     [2, "", "Lemons"]
   ],
   "pantry": ["Salt", "Pepper", "Light Soy Sauce"],
-  "equipment": ["Chef's Knife", "Chopping Board", "Saucepan"],
-  "method": []
+  "equipment": ["Chef's Knife", "Chopping Board", "Saucepan", "Large Bowl"],
+  "method": [
+    "Slice the sweet potato into 0.5cm rounds and put to one side",
+    "Peel the ginger, finely slice, and add to the saucepan",
+    "Finely slice the garlic cloves and add to the saucepan",
+    "Roughly chop the chillis and add to the saucepan with seeds",
+    "Add chicken thighs to the saucepan",
+    "Wash the jasmine rice under running water in a large bowl until the water runs clear",
+    "Add the rice to saucepan, wipe out the bowl and put to one side",
+    "Fill the saucepan with cold water until just covering all the ingredients",
+    "Put saucepan onto medium heat and bring to a simmer",
+    "Simmer for 15 Minutes",
+    "Add the sweet potato rounds to the saucepan",
+    "If any scum has formed, skim it off with a spoon and discard",
+    "Add the juice of one lemon",
+    "Add a large amount of freshly cracked black pepper",
+    "Simmer for 15 minutes, until the sweet potato is tender",
+    "Fish out the chicken and add to the large bowl",
+    "Using two forks, shred the chicken",
+    "Add the chicken back to the saucepan",
+    "Add light soy sauce, stir, and taste until it tastes well seasoned",
+    "Serve in a bowl making sure to get a bit of everything. Finish with more black pepper"
+  ]
 }
