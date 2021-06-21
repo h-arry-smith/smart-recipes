@@ -33,7 +33,14 @@ const RecipeIntro = ({recipe}) => {
             Let's get everything ready!
           </p>
 
-          <CheckboxList list={["a", "b", "c"]} />
+          <div className="flex space-x-2 max-w-2xl mx-auto mt-4">
+            <div className="w-1/2">
+              <IngredientList ingredients={recipe.ingredients} pantry={recipe.pantry} />
+            </div>
+            <div className="w-1/2">
+              <EquipmentList equipment={recipe.equipment} />
+            </div>
+          </div>
         </div>
 
       </div>
@@ -41,4 +48,27 @@ const RecipeIntro = ({recipe}) => {
   );
 }
 
+const IngredientList = ({ingredients, pantry}) => {
+  const generateIngredientText = (ingredients) => {
+    return ingredients.map(ingredient => `${ingredient[0]}${ingredient[1]} ${ingredient[2]}`)
+  }
+
+  return (
+    <div className="px-4 py-6 bg-purple-600 rounded-xl font-semibold text-white">
+      <p className="text-2xl my-2"> Ingredients </p>
+      <CheckboxList list={generateIngredientText(ingredients)} />
+      <p className="text-2xl my-2"> Pantry Items </p>
+      <CheckboxList list={pantry} />
+    </div>
+  )
+}
+
+const EquipmentList = ({equipment}) => {
+  return (
+    <div className="px-4 py-6 bg-yellow-400 rounded-xl font-semibold">
+      <p className="text-2xl my-2"> Equipment </p>
+      <CheckboxList list={equipment} />
+    </div>
+  )
+}
 export default RecipeIntro

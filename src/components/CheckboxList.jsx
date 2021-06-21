@@ -30,8 +30,8 @@ const Checkbox = ({item}) => {
             } top-0 left-0 h-8 w-8 absolute text-black-900`} />
           </div>
           <p className={`${
-              checked ? 'line-through -rotate-3' : ''
-            } ml-3 text-2xl`}>
+              checked ? 'line-through' : ''
+            } ml-3 text-xl`}>
             { item }
           </p>
         </div>
