@@ -2,11 +2,12 @@ import React, { useEffect, useState } from 'react'
 import { Switch, Route, useParams, useRouteMatch } from 'react-router-dom'
 
 import RecipeIntro from './components/RecipeIntro.jsx'
+import RecipeStep from './components/RecipeStep.jsx'
 
 const Recipe = () => {
-  const [recipe, setRecipe] = useState(null);
-  let { path, url } = useRouteMatch();
-  let { slug } = useParams();
+  const [recipe, setRecipe] = useState(null)
+  let { path, url } = useRouteMatch()
+  let { slug } = useParams()
   
   useEffect(() => {
     async function fetchRecipeJSON() {
@@ -24,7 +25,7 @@ const Recipe = () => {
           <RecipeIntro recipe={recipe} />
         </Route>
         <Route path={`${path}/:step`}>
-          Step
+          <RecipeStep recipe={recipe} />
         </Route>
       </Switch>
     )
