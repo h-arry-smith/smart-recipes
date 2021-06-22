@@ -48,7 +48,7 @@ const RecipeIntro = ({recipe}) => {
       </div>
 
       <div className="my-6">
-        <HashLink to={`${slug}/1#1`}>
+        <HashLink to={`${slug}/1`}>
           <div className="py-4 px-8 rounded-lg bg-green-400 text-white text-2xl font-semibold w-max mx-auto">
             Let's Begin!
           </div>

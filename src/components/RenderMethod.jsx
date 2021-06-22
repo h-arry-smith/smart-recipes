@@ -31,14 +31,16 @@ const RenderMethod = ({step, stepN, stepCurrent}) => {
 
   return (
     <div 
-      id={stepN}
       className={`${
-        highlight ? 'text-gray-700' : 'text-gray-200'
-        } py-32`}
+        highlight ? 'text-gray-700 border-gray-800' : 'text-gray-200'
+        } relative pt-16 pb-16 my-4 pl-8 border-l-8` }
     >
-      <p className="mb-4 pl-1 pr-4 uppercase text-4xl w-max font-light">
+      <span className="absolute top-1/2 left-0" id={stepN}></span>
+      <h2
+        className="mb-4 pl-1 pr-4 uppercase text-4xl w-max font-light"
+      >
         Step <span className="font-semibold">{ toWords.convert(stepN) }</span>
-      </p>
+      </h2>
       { step.map(step => (
         <>
           { renderStep(step) }

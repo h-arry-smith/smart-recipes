@@ -9,14 +9,14 @@ const RecipeStep = ({recipe}) => {
 
   return (
     <div>
-      <div className="fixed top-0 left-0 w-full">
+      <div className="fixed top-0 left-0 w-full z-10">
         <RecipeHeader recipe={recipe} />
       </div>
       <div className="flex flex-col min-h-screen">
 
         <div className="flex-grow flex justify-center">
           <div class="w-2/3">
-            <p className="text-gray-800 text-5xl font-light mt-4">
+            <p className="text-gray-800 text-5xl font-light mt-16">
               { recipe.method.map((recipeStep, index) => (
                 <RenderMethod step={recipeStep} stepN={index+1} stepCurrent={step} key={index} />
               )) }
@@ -42,15 +42,17 @@ const RecipeFooter = ({step, path}) => {
   let previousStep = parseInt(step - 1)
   let nextStep = parseInt(step) + 1
 
+  const scroll = (el) => el.scrollIntoView({ behavior: 'smooth', block: 'center' })
+
   const getPrevious = (step) => {
     if (step === 0) {
-      return <HashLink smooth to={`/recipe/${path}`}>Back</HashLink>
+      return <HashLink scroll={scroll} to={`/recipe/${path}`}>Back</HashLink>
     } else {
-      return <HashLink smooth to={`${step}#${step}`}>Previous Step</HashLink>
+      return <HashLink scroll={scroll} to={`${step}#${step}`}>Previous Step</HashLink>
     }
   }
 
-  let nextLink = <HashLink smooth to={`${nextStep}#${nextStep}`}>Next Step</HashLink>
+  let nextLink = <HashLink scroll={scroll} to={`${nextStep}#${nextStep}`}>Next Step</HashLink>
 
   return (
     <div className="flex justify-between py-6 px-8 border-t bg-white shadow-lg">
