@@ -1,9 +1,11 @@
 import React from 'react'
 
 import Timer from './tokens/Timer.jsx'
+import Action from './tokens/Action.jsx'
 
 const TOKENS = {
-  "timer": Timer
+  "timer": Timer,
+  "action": Action
 }
 
 const RenderMethod = ({step}) => {
