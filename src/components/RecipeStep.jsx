@@ -1,5 +1,6 @@
 import React from 'react'
 import { Link, useParams, useRouteMatch } from 'react-router-dom'
+import { HashLink } from 'react-router-hash-link'
 
 import RenderMethod from './RenderMethod.jsx'
 
@@ -7,6 +8,7 @@ const RecipeStep = ({recipe}) => {
   let { slug, step } = useParams()
 
   return (
+    <div>
     <div className="flex flex-col min-h-screen">
       <div className="flex-none">
         <RecipeHeader recipe={recipe} />
@@ -21,10 +23,11 @@ const RecipeStep = ({recipe}) => {
           </p>
         </div>
       </div>
-
-      <div className="flex-none">
-        <RecipeFooter step={step} path={slug} />
-      </div>
+    </div>
+    
+    <div className="fixed bottom-0 left-0 w-full">
+      <RecipeFooter step={step} path={slug} />
+    </div>
     </div>
   )
 }
@@ -37,20 +40,20 @@ const RecipeHeader = ({recipe}) => (
 
 const RecipeFooter = ({step, path}) => {
   let previousStep = parseInt(step - 1)
-  let nextStep = parseInt(step + 1)
+  let nextStep = parseInt(step) + 1
 
   const getPrevious = (step) => {
     if (step === 0) {
-      return <Link to={`/recipe/${path}`}>Back</Link>
+      return <HashLink smooth to={`/recipe/${path}`}>Back</HashLink>
     } else {
-      return <Link to={`${step}`}>Previous Step</Link>
+      return <HashLink smooth to={`${step}#${step}`}>Previous Step</HashLink>
     }
   }
 
-  let nextLink = <Link to={`${parseInt(step) + 1}`}>Next Step</Link>
+  let nextLink = <HashLink smooth to={`${nextStep}#${nextStep}`}>Next Step</HashLink>
 
   return (
-    <div className="flex justify-between py-6 px-12 border-t">
+    <div className="flex justify-between py-6 px-8 border-t bg-white shadow-lg">
       { getPrevious(previousStep) }
       { nextLink }
     </div>
