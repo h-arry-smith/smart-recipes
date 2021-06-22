@@ -1,12 +1,10 @@
 import React from 'react'
 import { Link, useParams, useRouteMatch } from 'react-router-dom'
-import { ToWords } from 'to-words'
 
 import RenderMethod from './RenderMethod.jsx'
 
 const RecipeStep = ({recipe}) => {
   let { slug, step } = useParams()
-  const toWords = new ToWords()
 
   return (
     <div className="flex flex-col min-h-screen">
@@ -14,13 +12,12 @@ const RecipeStep = ({recipe}) => {
         <RecipeHeader recipe={recipe} />
       </div>
       
-      <div className="flex-grow flex justify-center mt-24">
+      <div className="flex-grow flex justify-center">
         <div class="w-2/3">
-          <p className="pl-1 pr-4 uppercase text-gray-500 text-4xl w-max font-light">
-            Step <span className="font-semibold text-gray-600">{ toWords.convert(step) }</span>
-          </p>
           <p className="text-gray-800 text-5xl font-light mt-4">
-            <RenderMethod step={recipe.method[step - 1]} />
+            { recipe.method.map((recipeStep, index) => (
+              <RenderMethod step={recipeStep} stepN={index+1} stepCurrent={step} key={index} />
+            )) }
           </p>
         </div>
       </div>
