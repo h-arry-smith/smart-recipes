@@ -1,9 +1,15 @@
 import React from 'react'
 
 const RenderMethod = ({step}) => {
+  const renderStep = (step) => {
+    return <p> { step } </p>
+  }
+
   return (
     <>
-      { step[0] }
+      { step.map(step => (
+        <p> { renderStep(step) } </p>
+      )) }
     </>
   )
 }
