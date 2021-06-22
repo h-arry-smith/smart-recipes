@@ -2,6 +2,8 @@ import React from 'react'
 import { Link, useParams, useRouteMatch } from 'react-router-dom'
 import { ToWords } from 'to-words'
 
+import RenderMethod from './RenderMethod.jsx'
+
 const RecipeStep = ({recipe}) => {
   let { slug, step } = useParams()
   const toWords = new ToWords()
@@ -18,7 +20,7 @@ const RecipeStep = ({recipe}) => {
             Step <span className="font-semibold text-gray-600">{ toWords.convert(step) }</span>
           </p>
           <p className="text-gray-800 text-5xl font-light mt-4">
-            {recipe.method[step - 1]}
+            <RenderMethod step={recipe.method[step - 1]} />
           </p>
         </div>
       </div>
