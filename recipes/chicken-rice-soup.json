@@ -18,8 +18,7 @@
   "pantry": ["Salt", "Pepper", "Light Soy Sauce"],
   "equipment": ["Chef's Knife", "Chopping Board", "Saucepan", "Large Bowl"],
   "method": [
-    ["a", "b", "c"],
-    ["Slice the sweet potato into 0.5cm rounds and put to one side"],
+    ["Slice the sweet potato into 0.5cm rounds and put to one side", ["test", "test token render"], "then something else"],
     ["Peel the ginger, finely slice, and add to the saucepan"],
     ["Finely slice the garlic cloves and add to the saucepan"],
     ["Roughly chop the chillis and add to the saucepan with seeds"],
