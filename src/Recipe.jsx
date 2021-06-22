@@ -16,7 +16,7 @@ const Recipe = () => {
     }
 
     fetchRecipeJSON().then(json => setRecipe(json))
-  }) 
+  }, []) 
   
   if (recipe !== null) {
     return (
