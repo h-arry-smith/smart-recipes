@@ -25,7 +25,7 @@ const RenderMethod = ({step, stepN, stepCurrent}) => {
       }
 
       const Token = TOKENS[tokenIdentifier]
-      return <Token arg={tokenArgument} />
+      return <Token arg={tokenArgument} highlight={highlight} />
     }
   }
 
