@@ -9,31 +9,31 @@ const RecipeStep = ({recipe}) => {
 
   return (
     <div>
-    <div className="flex flex-col min-h-screen">
-      <div className="flex-none">
+      <div className="fixed top-0 left-0 w-full">
         <RecipeHeader recipe={recipe} />
       </div>
-      
-      <div className="flex-grow flex justify-center">
-        <div class="w-2/3">
-          <p className="text-gray-800 text-5xl font-light mt-4">
-            { recipe.method.map((recipeStep, index) => (
-              <RenderMethod step={recipeStep} stepN={index+1} stepCurrent={step} key={index} />
-            )) }
-          </p>
+      <div className="flex flex-col min-h-screen">
+
+        <div className="flex-grow flex justify-center">
+          <div class="w-2/3">
+            <p className="text-gray-800 text-5xl font-light mt-4">
+              { recipe.method.map((recipeStep, index) => (
+                <RenderMethod step={recipeStep} stepN={index+1} stepCurrent={step} key={index} />
+              )) }
+            </p>
+          </div>
         </div>
       </div>
-    </div>
-    
-    <div className="fixed bottom-0 left-0 w-full">
-      <RecipeFooter step={step} path={slug} />
-    </div>
+
+      <div className="fixed bottom-0 left-0 w-full">
+        <RecipeFooter step={step} path={slug} />
+      </div>
     </div>
   )
 }
 
 const RecipeHeader = ({recipe}) => (
-  <div className="w-full mx-auto text-center text-2xl font-semibold py-6 border-b">
+  <div className="w-full mx-auto text-center text-2xl font-semibold py-6 border-b bg-white">
     <h1>{ recipe.metadata.title }</h1>
   </div>
 )
