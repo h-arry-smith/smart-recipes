@@ -18,7 +18,7 @@
   "pantry": ["Salt", "Pepper", "Light Soy Sauce"],
   "equipment": ["Chef's Knife", "Chopping Board", "Saucepan", "Large Bowl"],
   "method": [
-    ["Slice the sweet potato into 0.5cm rounds and put to one side", ["test", "test token render"], "then something else"],
+    ["Slice the sweet potato into 0.5cm rounds and put to one side"],
     ["Peel the ginger, finely slice, and add to the saucepan"],
     ["Finely slice the garlic cloves and add to the saucepan"],
     ["Roughly chop the chillis and add to the saucepan with seeds"],
@@ -27,7 +27,7 @@
     ["Add the rice to saucepan, wipe out the bowl and put to one side"],
     ["Fill the saucepan with cold water until just covering all the ingredients"],
     ["Put saucepan onto medium heat and bring to a simmer"],
-    ["Simmer for 15 Minutes"],
+    ["Simmer for 15 Minutes", ["timer", 900]],
     ["Add the sweet potato rounds to the saucepan"],
     ["If any scum has formed, skim it off with a spoon and discard"],
     ["Add the juice of one lemon"],

@@ -1,13 +1,9 @@
 import React from 'react'
 
-const TestToken = ({arg}) => (
-  <>
-    <span className="uppercase text-red-500 italic"> { arg } </span>
-  </>
-)
-  
+import Timer from './tokens/Timer.jsx'
+
 const TOKENS = {
-  "test": TestToken
+  "timer": Timer
 }
 
 const RenderMethod = ({step}) => {
@@ -17,6 +13,10 @@ const RenderMethod = ({step}) => {
     } else if (Array.isArray(step)) {
       const tokenIdentifier = step[0]
       const tokenArgument = step[1]
+
+      if (TOKENS[tokenIdentifier] === undefined) {
+        return <p> Token not implemented: {tokenIdentifier} </p>
+      }
 
       const Token = TOKENS[tokenIdentifier]
       return <Token arg={tokenArgument} />
