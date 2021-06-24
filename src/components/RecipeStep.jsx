@@ -3,6 +3,7 @@ import { Link, useParams, useRouteMatch } from 'react-router-dom'
 import { HashLink } from 'react-router-hash-link'
 
 import RenderMethod from './RenderMethod.jsx'
+import HeatBar from './HeatBar.jsx'
 
 const RecipeStep = ({recipe}) => {
   let { slug, step } = useParams()
@@ -15,11 +16,18 @@ const RecipeStep = ({recipe}) => {
       <div className="flex flex-col min-h-screen">
 
         <div className="flex-grow flex justify-center">
-          <div class="w-2/3">
+          <div className="w-2/3 before:block before:h-36">
             <p className="text-gray-800 text-5xl font-light mt-16">
-              { recipe.method.map((recipeStep, index) => (
-                <RenderMethod step={recipeStep} stepN={index+1} stepCurrent={step} key={index} />
-              )) }
+              { recipe.method.map((recipeStep, index) => {
+                const stepN = index + 1
+                const highlight = stepN == step
+                
+                return (
+                  <div className="flex">
+                    <HeatBar level={recipeStep.heat} key={index} highlight={highlight} />
+                    <RenderMethod step={recipeStep.method} stepN={stepN} stepCurrent={step} key={index} highlight={highlight} />
+                  </div>
+                )}) }
             </p>
           </div>
         </div>

@@ -9,9 +9,8 @@ const TOKENS = {
   "action": Action
 }
 
-const RenderMethod = ({step, stepN, stepCurrent}) => {
+const RenderMethod = ({step, stepN, stepCurrent, highlight}) => {
   const toWords = new ToWords()
-  const highlight = stepN == stepCurrent
 
   const renderStep = (step) => {
     if (typeof step === "string") {
@@ -33,7 +32,7 @@ const RenderMethod = ({step, stepN, stepCurrent}) => {
     <div 
       className={`${
         highlight ? 'text-gray-700 border-gray-800' : 'text-gray-200'
-        } relative pt-16 pb-16 my-4 pl-8 border-l-8` }
+        } relative py-16` }
     >
       <span className="absolute top-1/2 left-0" id={stepN}></span>
       <h2
