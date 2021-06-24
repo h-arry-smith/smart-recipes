@@ -43,7 +43,11 @@
       "method": ["Fill the saucepan with cold water until just covering all the ingredients"]
     },
     { 
-      "method": ["Put saucepan onto medium heat and bring to a simmer"],
+      "method": [
+        "Put saucepan onto",
+        ["heat", "med"],
+        "and bring to a simmer"
+      ],
       "heat": "med"
     },
     { 

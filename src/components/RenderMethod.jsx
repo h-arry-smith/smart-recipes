@@ -3,10 +3,12 @@ import { ToWords } from 'to-words'
 
 import Timer from './tokens/Timer.jsx'
 import Action from './tokens/Action.jsx'
+import Heat from './tokens/Heat.jsx'
 
 const TOKENS = {
   "timer": Timer,
-  "action": Action
+  "action": Action,
+  "heat": Heat
 }
 
 const RenderMethod = ({step, stepN, stepCurrent, highlight}) => {
